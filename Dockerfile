@@ -74,4 +74,4 @@ WORKDIR /product_name
 ADD Gemfile /product_name/Gemfile
 ADD Gemfile.lock /product_name/Gemfile.lock
 RUN bundle install
-ADD ./product_name
+ADD . /product_name
