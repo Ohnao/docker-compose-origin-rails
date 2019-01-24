@@ -30,6 +30,7 @@ RUN yum update -y && \
     yum -y install http://mirror.centos.org/centos/7/os/x86_64/Packages/libXcomposite-0.4.4-4.1.el7.x86_64.rpm && \
     curl -s https://intoli.com/install-google-chrome.sh | bash && \
     yum -y install chromedriver && \
+    yum -y install sqlite-devel && \
     yum clean all
 ##
 ### ruby from src
