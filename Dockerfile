@@ -7,7 +7,6 @@ ENV RUBYGEMS_VERSION 2.7.6
 ENV BUNDLER_VERSION 1.17.1
 ENV RUBY_DOWNLOAD_MIRROR https://cache.ruby-lang.org/pub/ruby
 ENV RUBY_DOWNLOAD_SHA256 9828d03852c37c20fa333a0264f2490f07338576734d910ee3fd538c9520846c
-
 ##
 ### yum initial settings
 ##
@@ -32,7 +31,6 @@ RUN yum update -y && \
     curl -s https://intoli.com/install-google-chrome.sh | bash && \
     yum -y install chromedriver && \
     yum clean all
-
 ##
 ### ruby from src
 ##
@@ -49,11 +47,9 @@ RUN set -ex && \
     make -j"$(nproc)" && \
     make install && \
     cd / && rm -rf /build
-
 ##
 ### gem and bundler
 ##
-
 ENV GEM_HOME /bundle
 ENV BUNDLE_PATH="$GEM_HOME" \
     BUNDLE_BIN="$GEM_HOME/bin" \
@@ -65,7 +61,6 @@ RUN gem update --system "$RUBYGEMS_VERSION" && \
 		gem install bundler --version "$BUNDLER_VERSION" --force && \
     rm -r /root/.gem/
 RUN chmod -R 777 "$GEM_HOME" "$BUNDLE_BIN"
-
 ##
 ### set directory and Gemfile
 ##
