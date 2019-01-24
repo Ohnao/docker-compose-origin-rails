@@ -31,7 +31,6 @@ RUN yum update -y && \
     yum -y install http://mirror.centos.org/centos/7/os/x86_64/Packages/libXcomposite-0.4.4-4.1.el7.x86_64.rpm && \
     curl -s https://intoli.com/install-google-chrome.sh | bash && \
     yum -y install chromedriver && \
-    yum -y install sqlite-devel && \
     yum clean all
 
 ##
@@ -74,4 +73,5 @@ RUN mkdir /product_name
 WORKDIR /product_name
 ADD Gemfile /product_name/Gemfile
 ADD Gemfile.lock /product_name/Gemfile.lock
+RUN bundle update && bundle install && bundle exec rails webpacker:install
 ADD . /product_name
