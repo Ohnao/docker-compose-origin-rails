@@ -74,6 +74,5 @@ RUN mkdir /product_name
 WORKDIR /product_name
 ADD Gemfile /product_name/Gemfile
 ADD Gemfile.lock /product_name/Gemfile.lock
-CMD ["/bin/sh", "-c", "yarn install && bundle update && bundle install && bundle exec rails s -p 3000 -b '0.0.0.0'"]
 RUN bundle update && bundle install
 ADD . /product_name
