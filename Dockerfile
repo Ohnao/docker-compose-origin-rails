@@ -74,5 +74,4 @@ RUN mkdir /product_name
 WORKDIR /product_name
 ADD Gemfile /product_name/Gemfile
 ADD Gemfile.lock /product_name/Gemfile.lock
-RUN bundle update && bundle install
 ADD . /product_name
