@@ -35,7 +35,6 @@ RUN yum update -y && \
 ##
 ### ruby from src
 ##
-
 RUN set -ex && \
     mkdir -p /usr/local/etc && \
     echo -e "install: --no-document\nupdate: --no-document" > /usr/local/etc/gemrc && \
