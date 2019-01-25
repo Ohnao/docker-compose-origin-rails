@@ -13,7 +13,7 @@ services:
 
   web:
     build: .
-    command: ["/bin/sh", "-c", "yarn install && bundle update && bundle install && bundle exec rails webpacker:install && bundle exec rails s -p 3000 -b '0.0.0.0'"]
+    command: ["/bin/sh", "-c", "yarn install && bundle update && bundle install --path vendor/cache && bundle exec rails webpacker:install && bundle exec rails s -p 3000 -b '0.0.0.0'"]
     volumes:
       - .:/product_name
     ports:
