@@ -80,6 +80,9 @@ GEM
       factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
     ffi (1.10.0)
+    ffi (1.10.0-java)
+    ffi (1.10.0-x64-mingw32)
+    ffi (1.10.0-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.5.3)
@@ -102,11 +105,21 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     mysql2 (0.5.2)
+    mysql2 (0.5.2-x64-mingw32)
+    mysql2 (0.5.2-x86-mingw32)
+    mysql2 (0.5.2-x86-mswin32-60)
     nio4r (2.3.1)
+    nio4r (2.3.1-java)
     nokogiri (1.10.1)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.1-java)
+    nokogiri (1.10.1-x64-mingw32)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.1-x86-mingw32)
       mini_portile2 (~> 2.4.0)
     public_suffix (3.0.3)
     puma (3.12.0)
+    puma (3.12.0-java)
     rack (2.0.6)
     rack-proxy (0.6.5)
       rack
@@ -189,14 +202,20 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
+    sqlite3 (1.3.13-x64-mingw32)
+    sqlite3 (1.3.13-x86-mingw32)
+    sqlite3 (1.3.13-x86-mswin32-60)
     thor (0.20.3)
     thread_safe (0.3.6)
+    thread_safe (0.3.6-java)
     tilt (2.0.9)
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2018.9)
+      tzinfo (>= 1.0.0)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
     web-console (3.7.0)
@@ -206,12 +225,18 @@ GEM
       railties (>= 5.0)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
+    websocket-driver (0.6.5-java)
+      websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
 PLATFORMS
+  java
   ruby
+  x64-mingw32
+  x86-mingw32
+  x86-mswin32
 
 DEPENDENCIES
   byebug
@@ -237,4 +262,4 @@ DEPENDENCIES
   webpacker!
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
