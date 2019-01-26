@@ -2,18 +2,17 @@ version: '2'
 services:
 
   db:
-    image: mysql:5.7
+    image: mysql
     container_name: rails-mysql
     volumes:
       - ./mysql_conf:/etc/mysql/conf.d/
-    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     ports:
       - 3306:3306
     env_file: .env
 
   web:
     build: .
-    command: ["/bin/sh", "-c", "yarn install && bundle update && bundle install --path vendor/cache && bundle exec rails s -p 3000 -b '0.0.0.0'"]
+    command: /bin/sh -c /product_name/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/product_name
     ports:

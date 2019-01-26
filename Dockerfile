@@ -7,6 +7,7 @@ ENV RUBYGEMS_VERSION 2.7.6
 ENV BUNDLER_VERSION 1.17.1
 ENV RUBY_DOWNLOAD_MIRROR https://cache.ruby-lang.org/pub/ruby
 ENV RUBY_DOWNLOAD_SHA256 9828d03852c37c20fa333a0264f2490f07338576734d910ee3fd538c9520846c
+
 ##
 ### yum initial settings
 ##
@@ -30,11 +31,12 @@ RUN yum update -y && \
     yum -y install http://mirror.centos.org/centos/7/os/x86_64/Packages/libXcomposite-0.4.4-4.1.el7.x86_64.rpm && \
     curl -s https://intoli.com/install-google-chrome.sh | bash && \
     yum -y install chromedriver && \
-    yum -y install sqlite-devel && \
     yum clean all
+
 ##
 ### ruby from src
 ##
+
 RUN set -ex && \
     mkdir -p /usr/local/etc && \
     echo -e "install: --no-document\nupdate: --no-document" > /usr/local/etc/gemrc && \
@@ -47,9 +49,11 @@ RUN set -ex && \
     make -j"$(nproc)" && \
     make install && \
     cd / && rm -rf /build
+
 ##
 ### gem and bundler
 ##
+
 ENV GEM_HOME /bundle
 ENV BUNDLE_PATH="$GEM_HOME" \
     BUNDLE_BIN="$GEM_HOME/bin" \
@@ -61,6 +65,7 @@ RUN gem update --system "$RUBYGEMS_VERSION" && \
 		gem install bundler --version "$BUNDLER_VERSION" --force && \
     rm -r /root/.gem/
 RUN chmod -R 777 "$GEM_HOME" "$BUNDLE_BIN"
+
 ##
 ### set directory and Gemfile
 ##
@@ -68,5 +73,5 @@ RUN mkdir /product_name
 WORKDIR /product_name
 ADD Gemfile /product_name/Gemfile
 ADD Gemfile.lock /product_name/Gemfile.lock
-RUN bundle exec rails webpacker:install
+RUN bundle update && bundle install && bundle exec rails webpacker:install
 ADD . /product_name
