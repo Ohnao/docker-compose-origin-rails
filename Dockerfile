@@ -71,8 +71,7 @@ RUN chmod -R 777 "$GEM_HOME" "$BUNDLE_BIN"
 ### set directory and Gemfile
 ##
 RUN mkdir /product_name
-WORKDIR /product_name
+WORKDIR /product_name/scaffold_sample
 ADD Gemfile /product_name/Gemfile
 ADD Gemfile.lock /product_name/Gemfile.lock
-RUN bundle update && bundle install
-ADD . /product_name
+ADD . /product_name/scaffold_sample
