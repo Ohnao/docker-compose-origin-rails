@@ -53,9 +53,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# webpack install
-gem 'webpacker', github: 'rails/webpacker'
-
 # rspec install
 group :development, :test do
   gem 'rspec-rails'
