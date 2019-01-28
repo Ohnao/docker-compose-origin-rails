@@ -23,7 +23,7 @@ $ bundle exec rails new product_name
 
 Dockerfileのset directory and Gemfileの記述部分のADD GemfileとADD Gemfile.lockのパスにproduct_nameの場所を追加する
 
-`
+'
 RUN mkdir /app-space
 
 WORKDIR /app-space
@@ -36,7 +36,7 @@ ADD . /app-space
 
 RUN bundle update && bundle install  
 aaaa
-`
+'
 
 docker-compose upでrailsサーバーを起動する
 
