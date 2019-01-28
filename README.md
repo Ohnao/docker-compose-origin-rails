@@ -24,7 +24,7 @@ $ bundle exec rails new product_name
 Dockerfileのset directory and Gemfileの記述部分のADD GemfileとADD Gemfile.lockのパスにproduct_nameの場所を追加する
 
 `
-RUN mkdir /app-space
+RUN mkdir /app-space  
 WORKDIR /app-space
 ADD Gemfile /app-space/product_name/Gemfile
 ADD Gemfile.lock /app-space/product_name/Gemfile.lock
