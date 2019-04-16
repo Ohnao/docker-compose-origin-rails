@@ -62,3 +62,6 @@ end
 
 # sqlite3
 gem 'sqlite3', '~> 1.3.13'
+
+# actionview
+gem "actionview", ">= 5.1.6.2"
