@@ -34,7 +34,7 @@ RUN yum clean all && \
 ##
 RUN set -ex && \
     mkdir -p /usr/local/etc && \
-    echo -e "install: --no-document\update: --no-document" > /usr/local/etc/gemrc && \
+    echo -e "install: --no-document\nupdate: --no-document" > /usr/local/etc/gemrc && \
     mkdir /build && cd /build && \
     curl -o ruby.tar.gz "$RUBY_DOWNLOAD_MIRROR/$RUBY_MAJOR/ruby-$RUBY_VERSION.tar.gz" && \
     echo "$RUBY_DOWNLOAD_SHA256 ruby.tar.gz" | sha256sum -c - && \
