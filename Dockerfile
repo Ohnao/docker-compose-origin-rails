@@ -29,7 +29,7 @@ RUN yum clean all && \
     yum -y install chromedriver && \
     yum -y install sqlite-devel && \
     yum -y install mysql-devel && \
-    yum clean all
+    #yum clean all
 ##
 ### ruby from src
 ##
