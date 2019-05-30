@@ -28,7 +28,7 @@ RUN yum clean all && \
     curl -s https://intoli.com/install-google-chrome.sh | bash && \
     yum -y install chromedriver && \
     yum -y install sqlite-devel && \
-    #yum -y install mysql-devel && \
+    yum -y install mysql-devel && \
     yum clean all
 ##
 ### ruby from src
