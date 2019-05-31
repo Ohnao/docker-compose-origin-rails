@@ -10,7 +10,8 @@ ENV RUBY_DOWNLOAD_SHA256 577fd3795f22b8d91c1d4e6733637b0394d4082db659fccf224c774
 ##
 ### yum initial settings
 ##
-RUN yum clean all && \
+RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 && \
+    yum clean all && \
     yum update -y && \
     yum install -y autoconf gcc gcc-c++ make automake patch && \
     yum install -y openssl-devel libyaml-devel gdbm-devel ncurses-devel && \
