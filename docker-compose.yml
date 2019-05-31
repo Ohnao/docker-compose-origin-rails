@@ -13,7 +13,7 @@ services:
 
   web:
     build: .
-    command: ["/bin/sh", "-c", "yarn install && rails new product_name && bundle exec rails s -p 3000 -b '0.0.0.0'"]
+    command: ["/bin/sh", "-c", "yarn install && rails new product_name && chmod go-w /bundle/bin/ && chmod go-w /bundle/ && cd product_name && bundle exec rails s -p 3000"]
     volumes:
       - .:/product_name
     ports:
