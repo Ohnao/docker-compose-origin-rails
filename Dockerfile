@@ -13,7 +13,7 @@ ENV RUBY_DOWNLOAD_SHA256 577fd3795f22b8d91c1d4e6733637b0394d4082db659fccf224c774
 RUN yum clean all && \
     yum update -y && \
     yum install -y autoconf gcc gcc-c++ make automake patch && \
-    yum install -y openssl-devel libyaml-devel libffi-devel gdbm-devel ncurses-devel && \
+    yum install -y openssl-devel libyaml-devel gdbm-devel ncurses-devel && \
     yum install -y epel-release yum-utils && \
     yum-config-manager --enable epel && \
     # tools
