@@ -14,6 +14,8 @@ services:
   web:
     build: .
     command: ["/bin/sh", "-c", "yarn install && bundle exec rails s -p 3000"]
+    environment:
+			BUNDLE_APP_CONFIG: /web/.bundle
     volumes:
       - .:/product_name
     ports:
