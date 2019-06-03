@@ -67,5 +67,5 @@ RUN mkdir /app-space
 WORKDIR /app-space
 ADD Gemfile /app-space/Gemfile
 ADD Gemfile.lock /app-space/Gemfile.lock
-ADD . /app-space
 RUN bundle update && bundle install
+ADD . /app-space
