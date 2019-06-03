@@ -51,7 +51,8 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'
 
 # rspec install
 group :development, :test do
@@ -65,3 +66,6 @@ gem 'sqlite3', '~> 1.3.13'
 
 # actionview
 gem "actionview", ">= 5.1.6.2"
+
+# bootsnap
+gem "bootsnap", require: false
